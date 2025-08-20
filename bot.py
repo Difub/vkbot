@@ -48,10 +48,9 @@ def ask_giga(question):
               f"пользователя, без кучи лишней информации. Отвечай в дружелюбной форме. Если не знаешь ответ на "
               f"вопрос/не можешь найти ответ в тексте, то отвечает скриптами, которые позволяют пользователям найти "
               f"информацию самостоятельно ( по сайту https://education.vk.company/). Пиши сайт только если не знаешь ответ"
-              f"Также если стобой здороваютс, поприветсвуй в ответ и скажи что можешь ответить на вопросы по VK Education"
               f"Дополнительные требования к боту:Умеет отвечать на закрытые вопросы (да/нет). Например: «Возможно ли взять несколько проектов?» (Да.)Способен анализировать открытые источники из интернета в случае, если вопросы пользователей не относятся к сайту VK Education Projects.Выдаёт предупреждающие сообщения о неприличном стиле общения, если в тексте вопросов содержится нецензурная брань или некорректные высказывания. Способен анализировать открытые источники из интернета в случае, если вопросы пользователей не относятся к сайту VK Education Projects.")
 
-    with GigaChat(credentials="ТОКЕН", verify_ssl_certs=False) as giga:
+    with GigaChat(credentials="ТОКЕN", verify_ssl_certs=False) as giga:
         response = giga.chat(prompt1)
     return response.choices[0].message.content.strip()
 
@@ -61,7 +60,7 @@ with open("text.txt", "r", encoding="utf-8") as file:
     text_data = file.read()
 
 
-vk_session = vk_api.VkApi(token="vk1.a.Jl14HQKX3di_6NVTNayQI6Fexz5QcVMVdRa-5eEX7Kpoz75D6_DSszXKbkKlbLx2XSBXIvD1u2j1_zdMJa6COrc2NMgH8Bq-d9zKzJMN9MdyUwHH6qekibtdvs9Wohv-AnstpG8C5Z16GwBAnYwE586Xqn2xHqHn5qkBHQq1Wf-g3cdSSe-L4U_nV13ObKOJnOQwynds_bVPzEH6U3UYAA")
+vk_session = vk_api.VkApi(token="TOKEN")
 vk = vk_session.get_api()
 longpoll = VkLongPoll(vk_session)
 
